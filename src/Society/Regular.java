@@ -1,5 +1,6 @@
 package Society;
 
+import Tasks.Algo;
 import Tasks.Task;
 
 public  class Regular extends Entered  implements HardTaskAssignable{
@@ -11,6 +12,20 @@ public  class Regular extends Entered  implements HardTaskAssignable{
 
     @Override
     public Task assignTask() {
-        return null;
+        int taskPool = this.getTasks().size();
+        if(taskPool == 0){
+            return null;
+        }
+        int task = Coder.getRNG().nextInt(taskPool);
+        return  this.getTasks().get(task);
     }
+
+    @Override
+    public void generateTaks() {
+        for(int i = 0; i < 5; i++){
+            this.getTasks().add(new Algo());
+        }
+    }
+
+
 }

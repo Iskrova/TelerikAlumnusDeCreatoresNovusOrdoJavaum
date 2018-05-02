@@ -5,8 +5,13 @@ import Tasks.Task;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public  abstract class Coder {
+
+
+    private static final Random RNG = new Random();
+
     private String name;
     private List<Task> tasks;
     private Rank rank;
@@ -23,4 +28,18 @@ public  abstract class Coder {
             return;
         }
     }
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public Rank getRank() {
+        return rank;
+    }
+
+    public static Random getRNG() {
+        return RNG;
+    }
+
+    public abstract void generateTaks();
 }

@@ -19,6 +19,7 @@ public class Doncho implements HardAdvisor,HardTaskAssignable {
 
     @Override
     public Task assignTask() {
+
         return null;
     }
 }

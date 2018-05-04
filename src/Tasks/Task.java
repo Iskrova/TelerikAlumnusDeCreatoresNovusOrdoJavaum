@@ -24,4 +24,8 @@ public abstract class Task {
         this.MIN_ALGO = MIN_ALGO;
         this.MAX_ALGO = MAX_ALGO;
     }
+
+    public Skill getRequirements() {
+        return requirements;
+    }
 }

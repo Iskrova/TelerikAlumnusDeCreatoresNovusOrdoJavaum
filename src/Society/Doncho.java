@@ -1,5 +1,6 @@
 package Society;
 
+import PlayerProperties.Skill;
 import Tasks.Algo;
 import Tasks.OOP;
 import Tasks.Task;
@@ -19,7 +20,9 @@ public class Doncho extends Fellow implements HardAdvisor, HardTaskAssignable {
     public void giveHardAdvice(Player player) {
         int codingSkill = Coder.getRNG().nextInt(11) + 5;
         int algoThinking = Coder.getRNG().nextInt(11) + 5;
-        player.getSkills().gainSkill(codingSkill, 0, algoThinking);
+        Skill s = new Skill(codingSkill, 0, algoThinking);
+        player.getSkills().gainSkill(s);
+        player.updateTask(s);
 
     }
 

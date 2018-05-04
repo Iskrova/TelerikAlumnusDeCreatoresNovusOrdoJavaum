@@ -39,6 +39,15 @@ public class Player {
         }
     }
 
+
+
+    public void updateTask(Skill skill){
+        //TODO FIX TASK UPDATE
+        currentTask.getSkill().reduceSkill(skill);
+        System.out.println("rip");
+//        currentTask.doTask(Skill);
+    }
+
     public Task getCurrentTask() {
         return currentTask;
     }

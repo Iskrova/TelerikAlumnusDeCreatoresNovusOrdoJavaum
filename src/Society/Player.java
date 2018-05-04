@@ -13,7 +13,7 @@ public class Player {
     private int experience;
     private int reqXP;
     private Rank rank;
-    private Skill skill;
+    private Skill skills;
     private int stressLevel;
     private LeisureActivity leisureActivity;
     private Task currentTask;
@@ -23,13 +23,31 @@ public class Player {
 
     }
     public void getSoftAdvice(SoftAdvisor softAdvisor){
+        softAdvisor.giveSoftAdvice(this);
 
     }
     public void getHardAdvice(HardAdvisor hardAdvisor){
+        hardAdvisor.giveHardAdvice(this);
 
     }
     public void receiveTask(Task task){
+        if(currentTask == null){
+            currentTask = task;
+        }else{
+            System.out.println("Task in progress.");
 
+        }
     }
 
+    public Task getCurrentTask() {
+        return currentTask;
+    }
+
+    public Skill getSkills() {
+        return skills;
+    }
+
+    public void stressOut(int stressLevel){
+        this.stressLevel += stressLevel;
+    }
 }

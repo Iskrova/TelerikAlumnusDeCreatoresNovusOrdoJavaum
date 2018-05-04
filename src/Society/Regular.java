@@ -12,12 +12,12 @@ public  class Regular extends Entered  implements HardTaskAssignable{
 
     @Override
     public Task assignTask() {
-        int taskPool = this.getTasks().size();
-        if(taskPool == 0){
+        int pool = getTasks().size();
+        if(pool == 0){
             return null;
         }
-        int task = Coder.getRNG().nextInt(taskPool);
-        return  this.getTasks().get(task);
+        int task = Coder.getRNG().nextInt(pool);
+        return getTasks().remove(task);
     }
 
     @Override

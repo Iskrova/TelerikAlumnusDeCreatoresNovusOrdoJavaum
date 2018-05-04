@@ -1,8 +1,8 @@
 package Society;
 
-import Tasks.Task;
+import Tasks.*;
 
-public class Emma implements SoftTaskAssignable, SoftAdvisor {
+public class Emma extends Fellow implements SoftTaskAssignable, SoftAdvisor {
     private static Emma ourInstance = new Emma();
 
     public static Emma getInstance() {
@@ -10,15 +10,30 @@ public class Emma implements SoftTaskAssignable, SoftAdvisor {
     }
 
     private Emma() {
+        super("Emma");
     }
 
     @Override
     public Task assignTask() {
-        return null;
+        int pool = getTasks().size();
+        if(pool == 0){
+            return null;
+        }
+        int task = Coder.getRNG().nextInt(pool);
+        return getTasks().remove(task);
     }
 
     @Override
     public void giveSoftAdvice(Player player) {
+        int softSkill = Coder.getRNG().nextInt(11) + 5;
+        player.getSkills().gainSkill(0, softSkill, 0);
+    }
 
+    @Override
+    public void generateTaks() {
+        for (int i = 0; i < 5; i++){
+            getTasks().add(new Persentation());
+            getTasks().add(new Documentation());
+        }
     }
 }

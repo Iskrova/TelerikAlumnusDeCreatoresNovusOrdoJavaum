@@ -5,11 +5,11 @@ public class Skill {
      private int softSkills;
      private int algorithmicThinking;
 
-     void reduceSkill(int coding, int softSkills, int algorithmicThinking)
+     public void reduceSkill(int coding, int softSkills, int algorithmicThinking)
      {
 
      }
-    void gainSkill(int coding, int softSkills, int algorithmicThinking)
+    public void gainSkill(int coding, int softSkills, int algorithmicThinking)
     {
 
     }

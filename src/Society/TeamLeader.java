@@ -16,7 +16,7 @@ public class TeamLeader extends MasterCoder implements SoftAdvisor, SoftTaskAssi
         int softSkill = Coder.getRNG().nextInt(11) + 7;
         Skill s = new Skill(0, softSkill, 0);
         player.getSkills().gainSkill(s);
-        player.updateTask(s);
+        player.updateTask(s, 1);
     }
 
     @Override

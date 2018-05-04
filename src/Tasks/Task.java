@@ -14,6 +14,7 @@ public abstract class Task {
     private Skill requirements;
     private double deadline;
     private String description;
+    private boolean completed = false;
 
     public Task(int MIN_CODING, int MAX_CODING, int MAX_SOFT, int MIN_SOFT, int MIN_ALGO, int MAX_ALGO) {
         //TODO FIX
@@ -27,5 +28,25 @@ public abstract class Task {
 
     public Skill getRequirements() {
         return requirements;
+    }
+
+    public void reduceDeadline(int time){
+        deadline -= time;
+    }
+
+    public double getDeadline() {
+        return deadline;
+    }
+
+    public void complete(){
+        if(requirements.getCoding() == 0
+        && requirements.getSoftSkills() == 0
+        && requirements.getAlgorithmicThinking() == 0){
+            completed = true;
+        }
+    }
+
+    public boolean isCompleted() {
+        return completed;
     }
 }

@@ -22,7 +22,7 @@ public class Doncho extends Fellow implements HardAdvisor, HardTaskAssignable {
         int algoThinking = Coder.getRNG().nextInt(11) + 5;
         Skill s = new Skill(codingSkill, 0, algoThinking);
         player.getSkills().gainSkill(s);
-        player.updateTask(s);
+        player.updateTask(s, 1);
 
     }
 

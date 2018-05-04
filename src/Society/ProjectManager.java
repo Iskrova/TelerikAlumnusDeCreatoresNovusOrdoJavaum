@@ -21,7 +21,7 @@ public class ProjectManager extends MasterCoder implements HardTaskAssignable,Ha
         player.stressOut(3);
         Skill s = new Skill(coding, 0, 0);
         player.getSkills().gainSkill(s);
-        player.updateTask(s);
+        player.updateTask(s, 1);
     }
 
     @Override

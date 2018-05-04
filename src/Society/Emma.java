@@ -29,7 +29,7 @@ public class Emma extends Fellow implements SoftTaskAssignable, SoftAdvisor {
         int softSkill = Coder.getRNG().nextInt(11) + 5;
         Skill s = new Skill(0, softSkill, 0);
         player.getSkills().gainSkill(s);
-        player.updateTask(s);
+        player.updateTask(s, 1);
     }
 
     @Override

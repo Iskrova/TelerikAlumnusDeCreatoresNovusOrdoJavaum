@@ -1,5 +1,6 @@
 package Society;
 
+import PlayerProperties.Skill;
 import Tasks.*;
 
 public class Emma extends Fellow implements SoftTaskAssignable, SoftAdvisor {
@@ -26,7 +27,9 @@ public class Emma extends Fellow implements SoftTaskAssignable, SoftAdvisor {
     @Override
     public void giveSoftAdvice(Player player) {
         int softSkill = Coder.getRNG().nextInt(11) + 5;
-        player.getSkills().gainSkill(0, softSkill, 0);
+        Skill s = new Skill(0, softSkill, 0);
+        player.getSkills().gainSkill(s);
+        player.updateTask(s);
     }
 
     @Override

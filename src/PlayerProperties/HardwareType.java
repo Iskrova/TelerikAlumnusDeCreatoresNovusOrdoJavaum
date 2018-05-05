@@ -1,7 +1,7 @@
 package PlayerProperties;
 
 public enum HardwareType {
-    LAPTOP,
     PC,
+    LAPTOP,
     MOBILE,
 }

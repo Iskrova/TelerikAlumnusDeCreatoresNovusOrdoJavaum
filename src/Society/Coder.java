@@ -2,6 +2,7 @@ package Society;
 
 import PlayerProperties.Rank;
 import Tasks.Task;
+import Utility.Utility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,10 +24,10 @@ public  abstract class Coder {
     }
 
     private void setName(String name) {
-        if(name.isEmpty() ||name.length()<3 || name.length()>30){
-            System.out.println("Invalid name!");
-            return;
+        if(!(Utility.NameValidator.isValid(name))){
+            throw new IllegalArgumentException("Not valid name!");
         }
+        this.name=name;
     }
 
     public List<Task> getTasks() {

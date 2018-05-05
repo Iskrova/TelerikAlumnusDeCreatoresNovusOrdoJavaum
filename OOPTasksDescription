@@ -1,0 +1,69 @@
+A Game
+Project Description
+
+Design and implement a game by choice. Here are some suggestions:
+
+The world can be fantasy, sci-fi, modern, etc
+You may have one or more heroes, gaining experience, having skills, wearing items, etc
+You may have one or more players, fighting against a computer or against each other
+You may have enemies like creatures, machines, warriors, etc
+You may have items like swords, guns, armor, space-suits, etc
+You may have skills like double-damage, teleportation, etc
+
+General Requirements
+
+Please define and implement the following object-oriented assets in your project:
+
+At least 5 interfaces (with one or more implementations)
+At least 15 classes (implementing the application logic)
+At least 3 abstract classes (with inheritors)
+At least 1 custom exception class (with usage in your code)
+At least 3 levels of depth in inheritance
+
+At least 1 polymorphism usage
+
+At least 1 enumeration
+
+Prefer the StreamingAPI over loops, when applicable
+
+
+DO NOT use StreamingAPI at any cost, only when it makes sense
+
+
+$%$%$%$%$%$A line-of-business application
+TODO list application, TODOs can have a deadline, priorities, types etc
+Calendar application, keeping meetings with places and date, having notifications, etc
+Social network, with different users, different roles, friend list, user information, chat between users, groups of users, etc
+A chat application, supporting user-to-user chats, channels, group chats, friends-list, starred users, etc
+Application for Insurance company
+Informational system for Postal services (sending & receiving mails, packages, etc)
+Encyclopedia game
+Geocaching game
+"Tourist guide" informational system
+Cooking e-book
+Personal accounting system
+Personal medical cart
+Events scheduling system
+
+
+General Requirements
+
+Please define and implement the following object-oriented assets in your project:
+
+
+At least 5 interfaces (with one or more implementations)
+At least 15 classes (implementing the application logic)
+At least 3 abstract classes (with inheritors)
+At least 1 custom exception class (with usage in your code)
+At least 3 levels of depth in inheritance
+
+At least 1 polymorphism usage
+
+At least 1 enumeration
+
+Prefer the StreamingAPI over loops, when applicable
+
+
+DO NOT use StreamingAPI at any cost, only when it makes sense
+
+

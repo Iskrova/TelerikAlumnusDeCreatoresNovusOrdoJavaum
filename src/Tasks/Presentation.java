@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Documentation extends Task {
-    private final static int minCoding =200;
-    private final static int maxCoding =400;
-    private final static int minSoft =100;
-    private final static int maxSoft =135;
+public class Presentation extends Task {
+    private final static int minCoding =20;
+    private final static int maxCoding =55;
+    private final static int minSoft =300;
+    private final static int maxSoft =500;
     private final static int minAlgo =100;
-    private final static int maxAlgo =300;
-    public Documentation(String name, Skill requirements, String description, boolean completed) {
+    private final static int maxAlgo =255;
+    public Presentation(String name, Skill requirements, String description, boolean completed) {
         super(minCoding,maxCoding, minSoft, maxSoft, minAlgo, maxAlgo,
                 requirements, name,  description, completed);
     }
@@ -48,12 +48,12 @@ public class Documentation extends Task {
     public ArrayList<Task> generateTasks() {
         Map<String, String> map = new HashMap<>();
         ArrayList<Task> tasks= new ArrayList<>();
-        map = Reader.ReadTasks.getAllTasks("DocumentationTasksDescription");
+        map = Reader.ReadTasks.getAllTasks("PresentationTasksDescriptions");
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            Task t = new Documentation(entry.getKey(),
-                    Utility.SkillGenerator.generateSkill(Documentation.getMinCoding(),
-                    Documentation.getMaxCoding(),Documentation.getMinSoft(),Documentation.getMaxSoft(),
-                    Documentation.getMinAlgo(),Documentation.getMaxAlgo()),
+            Task t = new Presentation(entry.getKey(),
+                    Utility.SkillGenerator.generateSkill(Presentation.getMinCoding(),
+                    Presentation.getMaxCoding(),Presentation.getMinSoft(),
+                    Presentation.getMaxSoft(),Presentation.getMinAlgo(),Presentation.getMaxAlgo()),
                     entry.getValue(),false) ;
             tasks.add(t);
         }

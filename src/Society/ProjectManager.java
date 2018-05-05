@@ -1,7 +1,7 @@
 package Society;
 
 import PlayerProperties.Skill;
-import Tasks.Persentation;
+import Tasks.Presentation;
 import Tasks.OOP;
 import Tasks.Task;
 
@@ -27,7 +27,7 @@ public class ProjectManager extends MasterCoder implements HardTaskAssignable,Ha
     @Override
     public void generateTaks() {
         for(int i = 0; i < 5; i++){
-            getTasks().add(new Persentation());
+            getTasks().add(new Presentation());
             getTasks().add(new OOP());
         }
 

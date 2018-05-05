@@ -35,7 +35,7 @@ public class Emma extends Fellow implements SoftTaskAssignable, SoftAdvisor {
     @Override
     public void generateTaks() {
         for (int i = 0; i < 5; i++){
-            getTasks().add(new Persentation());
+            getTasks().add(new Presentation());
             getTasks().add(new Documentation());
         }
     }

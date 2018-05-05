@@ -1,7 +1,7 @@
 package Society;
 
 import Tasks.Documentation;
-import Tasks.Persentation;
+import Tasks.Presentation;
 
 public class CTO extends MasterCoder {
 
@@ -13,8 +13,8 @@ public class CTO extends MasterCoder {
     @Override
     public void generateTaks() {
         getTasks().add(new Documentation());
-        getTasks().add(new Persentation());
-        getTasks().add(new Persentation());
+        getTasks().add(new Presentation());
+        getTasks().add(new Presentation());
     }
 
     public void talkTo(Player p){

@@ -44,8 +44,7 @@ public class Documentation extends Task {
         return maxAlgo;
     }
 
-    @Override
-    public ArrayList<Task> generateTasks() {
+    public static ArrayList<Task> generateTasks() {
         Map<String, String> map = new HashMap<>();
         ArrayList<Task> tasks= new ArrayList<>();
         map = Reader.ReadTasks.getAllTasks("DocumentationTasksDescription");

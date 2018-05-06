@@ -15,8 +15,8 @@ public class BonusTask extends Task {
     private static String description= " Congratulations!\n" +
             "You get a bonus task autocompleted and also gain the experience, required for the task ";
 
-    @Override
-    public ArrayList<Task> generateTasks() {
+
+    public static ArrayList<Task> generateTasks() {
         ArrayList<Task> tasks= new ArrayList<>();
         for (String name : names) {
             Task t = new BonusTask(name,description,Utility.SkillGenerator.generateSkill(10,125,

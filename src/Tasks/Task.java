@@ -2,7 +2,7 @@ package Tasks;
 
 import PlayerProperties.Skill;
 
-public abstract class Task implements TaskGenerator {
+public abstract class Task {
     private final int MIN_CODING;
     private final int MAX_CODING;
     private final int MIN_SOFT;

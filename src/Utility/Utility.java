@@ -23,9 +23,8 @@ public class Utility {
             int randcoding = r.nextInt(maxCoding-minCoding +1)+minCoding;
             int randSoft = r.nextInt(maxSoft-minSoft +1)+minSoft;
             int randAlgo = r.nextInt(maxAlgo-minAlgo +1)+minAlgo;
-            Skill randomSkill = new Skill(randcoding,randSoft,randAlgo);
 
-            return randomSkill;
+            return new Skill(randcoding,randSoft,randAlgo);
 
         }
     }

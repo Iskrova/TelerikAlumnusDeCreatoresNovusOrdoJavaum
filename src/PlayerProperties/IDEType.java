@@ -1,9 +1,7 @@
 package PlayerProperties;
 
 public enum IDEType {
-    INTELIJ,
-    NETBEANS,
+    INTELLIJ,
     ECLIPSE,
-    VIM,
-    NPP,
+    NETBEANS,
 }

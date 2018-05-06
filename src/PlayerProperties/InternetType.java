@@ -1,7 +1,7 @@
 package PlayerProperties;
 
 public enum InternetType {
-    FIBER_OPTIC,
-    DSL,
-    DIAL_UP,
+    OPTICAL_FIBER,
+    LTE,
+    DSL
 }

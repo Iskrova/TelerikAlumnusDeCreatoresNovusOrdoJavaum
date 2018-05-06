@@ -1,6 +1,5 @@
 package PlayerProperties;
 
-public  abstract class Instrument {
+  abstract class Instrument {
      private Skill bonusPoints;
-
 }

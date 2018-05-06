@@ -4,36 +4,41 @@ import Society.Player;
 
 public class LeisureActivity {
 
-    public  void pickActivity(Player player, int choice){
-
-        switch (choice){
+    public  void pickActivity(Player player, int activityChoice){
+        int energy = player.getEnergy();
+        switch (activityChoice){
             case 1:
-                goOut(player); break;
+                goOut(player, energy); break;
             case 2:
-                learn(player); break;
+                learn(player, energy); break;
             case 3:
-                drinkBeer(player); break;
+                drinkBeer(player, energy); break;
             case 4:
-                goToTheBeach(player); break;
+                goToTheBeach(player, energy); break;
             case 5:
-                goSightseeing(player); break;
+                goSightseeing(player, energy); break;
             default:
                 break;
         }
     }
-    private void goOut(Player player){
-        //TODO
+    private void goOut(Player player, int energy){
+        player.setEnergy(energy + 1);
+        player.getCurrentTask().reduceDeadline(-1);
     }
-    private void learn(Player player){
-        //TODO
+    private void learn(Player player, int energy){
+        player.setEnergy(energy + 2);
+        player.getCurrentTask().reduceDeadline(-1);
     }
-    private void drinkBeer(Player player){
-        //TODO
+    private void drinkBeer(Player player, int energy){
+        player.setEnergy(energy + 3);
+        player.getCurrentTask().reduceDeadline(-1);
     }
-    private void goToTheBeach(Player player){
-        //TODO
+    private void goToTheBeach(Player player, int energy){
+        player.setEnergy(energy + 4);
+        player.getCurrentTask().reduceDeadline(-1);
     }
-    private void goSightseeing(Player player){
-        //TODO
+    private void goSightseeing(Player player, int energy){
+        player.setEnergy(energy + 5);
+        player.getCurrentTask().reduceDeadline(-1);
     }
 }

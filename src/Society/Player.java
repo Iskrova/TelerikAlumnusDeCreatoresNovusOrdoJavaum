@@ -33,7 +33,8 @@ public class Player {
         completedTasksHistory = new ArrayList<>();
     }
 
-    public void rest(int hours){
+    public void rest(Player player, int hours, int activityChoice){
+        leisureActivity.pickActivity(player, activityChoice);
         energy = Math.min(energy, 100);
         stressLevel -= hours * 13;
         stressLevel = Math.max(0, stressLevel);
@@ -134,6 +135,13 @@ public class Player {
                 reqXP = (int) Math.round(reqXP * 1.5);
             }
         }
+    }
 
+    public int getEnergy() {
+        return energy;
+    }
+
+    public void setEnergy(int energy) {
+        this.energy = energy;
     }
 }

@@ -15,7 +15,7 @@ public abstract class Task {
     private Skill requirements;
     private double deadline;
     private String description;
-    private boolean completed = false;
+    private boolean completed;
 
     public Task(int MIN_CODING, int MAX_CODING, int MIN_SOFT, int MAX_SOFT, int MIN_ALGO, int MAX_ALGO,
                 Skill requirements, String name, double deadline, String description, boolean completed) {
@@ -26,33 +26,34 @@ public abstract class Task {
         this.MIN_ALGO = MIN_ALGO;
         this.MAX_ALGO = MAX_ALGO;
         this.name = name;
-        setRequirements(requirements);
+//        setRequirements(requirements);
+        this.requirements = requirements;
         setDeadline(deadline);
         this.description = description;
         this.completed = completed;
     }
 
-    public int getMIN_CODING() {
+    private int getMIN_CODING() {
         return MIN_CODING;
     }
 
-    public int getMAX_CODING() {
+    private int getMAX_CODING() {
         return MAX_CODING;
     }
 
-    public int getMIN_SOFT() {
+    private int getMIN_SOFT() {
         return MIN_SOFT;
     }
 
-    public int getMAX_SOFT() {
+    private int getMAX_SOFT() {
         return MAX_SOFT;
     }
 
-    public int getMIN_ALGO() {
+    private int getMIN_ALGO() {
         return MIN_ALGO;
     }
 
-    public int getMAX_ALGO() {
+    private int getMAX_ALGO() {
         return MAX_ALGO;
     }
 
@@ -69,13 +70,13 @@ public abstract class Task {
 
     }
 
-    public void setDeadline(double deadline) {
-
-        this.deadline = calculateDeadline(deadline, SkillGenerator.Generator.generateSkill(getMIN_CODING(),getMAX_CODING(),
+    private void setDeadline(double deadline) {
+        deadline = calculateDeadline(deadline, SkillGenerator.Generator.generateSkill(getMIN_CODING(),getMAX_CODING(),
                 getMIN_SOFT(),getMAX_SOFT(),getMIN_ALGO(),getMAX_ALGO()));
+        this.deadline = deadline;
     }
 
-    public double calculateDeadline(double d, Skill requirements) {
+    private double calculateDeadline(double d, Skill requirements) {
         double resultCoding = requirements.getCoding() / MAX_CODING;
         resultCoding *= 100;
         double resultSoft = requirements.getSoftSkills() / MAX_SOFT;

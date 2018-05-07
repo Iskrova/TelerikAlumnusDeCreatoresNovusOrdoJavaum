@@ -82,6 +82,7 @@ public class Player {
             System.out.println("Task failed");
             currentTask = null;
             experience = (int ) Math.round(experience * 0.75);
+            return;
         }
         currentTask.getRequirements().reduceSkill(skill);
         currentTask.complete();

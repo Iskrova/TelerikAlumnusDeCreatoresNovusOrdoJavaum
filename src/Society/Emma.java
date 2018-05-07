@@ -22,7 +22,8 @@ public class Emma extends Fellow implements SoftTaskAssignable, SoftAdvisor {
     public Task assignTask() {
         int pool = getTasks().size();
         if(pool == 0){
-            return null;
+            generateTaks();
+            pool = getTasks().size();
         }
         int task = Coder.getRNG().nextInt(pool);
         return getTasks().remove(task);
@@ -30,6 +31,9 @@ public class Emma extends Fellow implements SoftTaskAssignable, SoftAdvisor {
 
     @Override
     public void giveSoftAdvice(Player player) throws NoCurrentTaskException {
+        if(player.getCurrentTask() == null) {
+            throw new NoCurrentTaskException("You need to have an active task for me to give you advice on");
+        }
         int softSkill = Coder.getRNG().nextInt(11) + 5;
         Skill s = new Skill(0, softSkill, 0);
         player.getSkills().gainSkill(s);

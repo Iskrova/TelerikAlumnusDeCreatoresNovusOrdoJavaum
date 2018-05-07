@@ -1,6 +1,7 @@
 package Society;
 
 import Activites.LeisureActivity;
+import PlayerProperties.Instrument;
 import PlayerProperties.Rank;
 import PlayerProperties.Skill;
 import Tasks.Task;
@@ -16,6 +17,7 @@ public class Player {
     private int reqXP;
     private Rank rank;
     private Skill skills;
+    private Toolkit tools;
     private int stressLevel;
     private LeisureActivity leisureActivity;
     private Task currentTask;
@@ -31,6 +33,7 @@ public class Player {
         skills = new Skill(10, 5, 10);
         leisureActivity = new LeisureActivity();
         completedTasksHistory = new ArrayList<>();
+        tools = new Toolkit();
     }
 
     public void rest(int hours, int activityChoice){
@@ -50,6 +53,8 @@ public class Player {
     public void relieveStres( int stressRelieved){
         if(stressLevel - stressRelieved >= 0){
             stressLevel -= stressRelieved;
+        }else{
+            stressLevel = 0;
         }
     }
     public void getSoftAdvice(SoftAdvisor softAdvisor) throws NoCurrentTaskException {
@@ -60,9 +65,15 @@ public class Player {
         hardAdvisor.giveHardAdvice(this);
 
     }
-    public void receiveTask(Task task){
+    public void receiveTask(Task task) throws NoCurrentTaskException {
         if(currentTask == null){
             currentTask = task;
+            for(Instrument tool : tools.getTools()){
+                if(tool == null){
+                    continue;
+                }
+                updateTask(tool.getBonusPoints(), 0);
+            }
         }else{
             System.out.println("Task in progress.");
 
@@ -73,7 +84,9 @@ public class Player {
         return Collections.unmodifiableList(completedTasksHistory);
     }
 
-    void updateTask(Skill skill, int time) throws NoCurrentTaskException {
+
+
+    public void updateTask(Skill skill, int time) throws NoCurrentTaskException {
         if(currentTask == null){
             throw new NoCurrentTaskException("No active task at the moment");
         }
@@ -90,23 +103,19 @@ public class Player {
             completedTasksHistory.add(currentTask);
             experience += 50;
             currentTask = null;
-
         }
-
-        System.out.println("rip");
-//        currentTask.doTask(Skill);
     }
 
     public Task getCurrentTask() {
         return currentTask;
     }
 
-    Skill getSkills() {
+    public Skill getSkills() {
 
         return skills;
     }
 
-    void stressOut(int stressLevel){
+    public void stressOut(int stressLevel){
 
         this.stressLevel += stressLevel;
     }
@@ -137,6 +146,10 @@ public class Player {
                 reqXP = (int) Math.round(reqXP * 1.5);
             }
         }
+    }
+
+    public void equipTool(Instrument tool){
+        tools.equipTool(tool);
     }
 
     public int getEnergy() {

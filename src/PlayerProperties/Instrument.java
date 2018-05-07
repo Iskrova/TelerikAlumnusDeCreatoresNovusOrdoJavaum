@@ -1,5 +1,10 @@
 package PlayerProperties;
 
-  abstract class Instrument {
+  public abstract class Instrument {
      private Skill bonusPoints;
+
+     public Skill getBonusPoints(){
+         return bonusPoints;
+     }
+
 }

@@ -43,7 +43,7 @@ public  abstract class Coder {
         return rank;
     }
 
-    static Random getRNG() {
+    public static Random getRNG() {
         return RNG;
     }
 

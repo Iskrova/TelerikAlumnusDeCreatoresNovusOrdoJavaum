@@ -1,15 +1,14 @@
 package PlayerProperties;
 
 public class IDE extends Instrument {
-    IDEType type;
-    private Skill bonusPoints;
+    private IDEType type;
 
     private IDE(IDEType type) {
         this.type = type;
         switch (type) {
-            case NETBEANS:  bonusPoints.gainSkill(new Skill(1, 0, 0)); break;
-            case ECLIPSE:   bonusPoints.gainSkill(new Skill(3, 0, 0)); break;
-            case INTELLIJ:  bonusPoints.gainSkill(new Skill(5,0,0)); break;
+            case NETBEANS:  getBonusPoints().gainSkill(new Skill(15, 0, 0)); break;
+            case ECLIPSE:   getBonusPoints().gainSkill(new Skill(60, 0, 0)); break;
+            case INTELLIJ:  getBonusPoints().gainSkill(new Skill(75,0,0)); break;
         }
     }
 

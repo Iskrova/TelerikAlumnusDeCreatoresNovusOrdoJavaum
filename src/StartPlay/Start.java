@@ -4,7 +4,12 @@ import PlayerProperties.Skill;
 import Society.*;
 import Tasks.Algo;
 import Tasks.Task;
+import Tasks.TaskGenerator;
 import Utility.SkillGenerator;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Start {
     public static void main(String[] args) {
@@ -15,13 +20,14 @@ public class Start {
         Ninja Cuki = new Ninja("Cuki");
         Task t = new Algo("fgdf", SkillGenerator.Generator.generateSkill(10,100,
                 10,20,100,200),"khkhj",false);
+        Map<String,ArrayList<Task>> map = TaskGenerator.Generator.generateAllTasksTypes();
 
 
 
 
         coki.receiveTask(Minkov.assignTask());
         coki.getCurrentTask();
-       // coki.getHardAdvice(Minkov);
+        //coki.getHardAdvice(Minkov);
 
         coki.receiveTask(ema.assignTask());
         //coki.getSoftAdvice(ema);

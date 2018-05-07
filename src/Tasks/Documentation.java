@@ -17,7 +17,7 @@ public class Documentation extends Task {
     private final static int maxAlgo =300;
     public Documentation(String name, Skill requirements, String description, boolean completed) {
         super(minCoding,maxCoding, minSoft, maxSoft, minAlgo, maxAlgo,
-                requirements, name, 3, description, completed);
+                requirements, name, 200, description, completed);
     }
 
     public static int getMinCoding() {
@@ -57,5 +57,10 @@ public class Documentation extends Task {
             tasks.add(t);
         }
         return tasks;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Task name is: \"%s\" with deadline:%f ",super.getName(), super.getDeadline()) ;
     }
 }

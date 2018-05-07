@@ -31,6 +31,7 @@ public class Doncho extends Fellow implements HardAdvisor, HardTaskAssignable {
 
     }
 
+
     @Override
     public Task assignTask() {
         int pool = getTasks().size();

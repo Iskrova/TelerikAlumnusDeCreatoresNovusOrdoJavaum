@@ -9,7 +9,7 @@ import java.util.Map;
 public class BonusTask extends Task {
     public BonusTask(String name, String description,Skill requrements) {
         super(10,125,15,55,55,130,
-                requrements, name,0,  description,true);
+                requrements, name,55,  description,true);
     }
     private static String[] names=new String[]{"Lucky Number", "Magic", "Miracle"};
     private static String description= " Congratulations!\n" +
@@ -24,5 +24,10 @@ public class BonusTask extends Task {
             tasks.add(t);
         }
     return tasks;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Task name is: \"%s\" with deadline:%f ",super.getName(), super.getDeadline()) ;
     }
 }

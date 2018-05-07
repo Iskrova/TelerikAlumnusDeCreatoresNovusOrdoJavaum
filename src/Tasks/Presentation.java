@@ -17,7 +17,7 @@ public class Presentation extends Task {
     private final static int maxAlgo =255;
     public Presentation(String name, Skill requirements, String description, boolean completed) {
         super(minCoding,maxCoding, minSoft, maxSoft, minAlgo, maxAlgo,
-                requirements, name,1, description, completed);
+                requirements, name,220, description, completed);
     }
 
     public static int getMinCoding() {
@@ -58,5 +58,10 @@ public class Presentation extends Task {
             tasks.add(t);
         }
         return tasks;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Task name is: \"%s\" with deadline:%f ",super.getName(), super.getDeadline()) ;
     }
 }

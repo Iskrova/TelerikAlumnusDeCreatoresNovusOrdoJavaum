@@ -20,7 +20,7 @@ public class Reader {
             for (int i = 0; i <AlgoTasksDesc.length; i++) {
                 String[] lines = AlgoTasksDesc[i].split(System.getProperty("line.separator"));
                 titles.add(lines[0]);
-                System.out.println(AlgoTasksDesc[i]);
+                //System.out.println(AlgoTasksDesc[i]);
             }
             for (int i = 0; i <AlgoTasksDesc.length; i++) {
                 String description = AlgoTasksDesc[i];

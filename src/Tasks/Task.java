@@ -26,7 +26,7 @@ public abstract class Task {
         this.MIN_ALGO = MIN_ALGO;
         this.MAX_ALGO = MAX_ALGO;
         this.name = name;
-//        setRequirements(requirements);
+        setRequirements(requirements);
         this.requirements = requirements;
         setDeadline(deadline);
         this.description = description;
@@ -76,15 +76,6 @@ public abstract class Task {
         this.deadline = deadline;
     }
 
-    private double calculateDeadline(double d, Skill requirements) {
-        double resultCoding = requirements.getCoding() / MAX_CODING;
-        resultCoding *= 100;
-        double resultSoft = requirements.getSoftSkills() / MAX_SOFT;
-        resultSoft *= 10;
-        double resultAlgo = requirements.getAlgorithmicThinking() / MAX_ALGO;
-        resultSoft *= 100;
-        return  d+ resultCoding + resultAlgo + resultSoft;
-    }
 
     public Skill getRequirements() {
         return requirements;
@@ -98,6 +89,20 @@ public abstract class Task {
         return deadline;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    private double calculateDeadline(double d, Skill requirements) {
+        double resultCoding = requirements.getCoding() / MAX_CODING;
+        resultCoding *= 100;
+        double resultSoft = requirements.getSoftSkills() / MAX_SOFT;
+        resultSoft *= 100;
+        double resultAlgo = requirements.getAlgorithmicThinking() / MAX_ALGO;
+        resultSoft *= 100;
+        return  d+ resultCoding + resultAlgo + resultSoft;
+    }
+
     public void complete() {
         if (requirements.getCoding() == 0
                 && requirements.getSoftSkills() == 0
@@ -109,4 +114,6 @@ public abstract class Task {
     public boolean isCompleted() {
         return completed;
     }
+
+
 }

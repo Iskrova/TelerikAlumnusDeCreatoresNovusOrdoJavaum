@@ -27,21 +27,31 @@ public class Start {
 
 
 
-
-        coki.receiveTask(t);
+        Minkov.generateTaks();
+        coki.receiveTask(Minkov.assignTask());
         coki.getCurrentTask();
+        System.out.println(Minkov.assignTask());
         coki.getHardAdvice(Minkov);
+
+        coki.rest(1,4);
 
         coki.receiveTask(ema.assignTask());
         coki.getSoftAdvice(ema);
 
-        coki.rest(1,4);
+
         coki.relieveStres(10);
-
+        Boyko.generateTaks();
         coki.receiveTask(Boyko.assignTask());
-       // coki.getHardAdvice(Minkov);
+        System.out.println(Boyko.assignTask());
+        coki.getHardAdvice(Minkov);
 
-        coki.receiveTask(Cuki.assignTask());
+        Cuki.generateTaks();
+        Task cuki = Cuki.assignTask();
+        coki.receiveTask(cuki);
+        System.out.println(cuki);
+
+
+        coki.getCompletedTasksHistory();
         //coki.getHardAdvice(Minkov);
         coki.relieveStres(50);
         coki.tireOut(50);

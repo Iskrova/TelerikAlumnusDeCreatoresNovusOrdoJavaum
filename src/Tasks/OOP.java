@@ -17,7 +17,7 @@ public class OOP extends Task {
     private final static int maxAlgo =400;
     public OOP(String name, Skill requirements, String description, boolean completed) {
         super(minCoding,maxCoding, minSoft, maxSoft, minAlgo, maxAlgo,
-                requirements, name, 5,  description, completed);
+                requirements, name, 500,  description, completed);
     }
 
     public static int getMinCoding() {
@@ -45,6 +45,8 @@ public class OOP extends Task {
     }
 
 
+
+
     public static ArrayList<Task> generateTasks() {
         Map<String, String> map = new HashMap<>();
         ArrayList<Task> tasks= new ArrayList<>();
@@ -57,5 +59,10 @@ public class OOP extends Task {
             tasks.add(t);
         }
         return tasks;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Task name is: \"%s\" with deadline:%f ",super.getName(), super.getDeadline()) ;
     }
 }

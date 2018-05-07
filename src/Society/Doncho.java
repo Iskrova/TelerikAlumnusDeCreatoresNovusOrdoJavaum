@@ -17,7 +17,7 @@ public class Doncho extends Fellow implements HardAdvisor, HardTaskAssignable {
         return ourInstance;
     }
 
-    private Doncho() {
+    public Doncho() {
         super("Doncho");
     }
 

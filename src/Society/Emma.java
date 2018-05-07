@@ -14,7 +14,7 @@ public class Emma extends Fellow implements SoftTaskAssignable, SoftAdvisor {
         return ourInstance;
     }
 
-    private Emma() {
+    public Emma() {
         super("Emma");
     }
 

@@ -4,6 +4,11 @@ import PlayerProperties.Skill;
 import Tasks.Documentation;
 import Tasks.Presentation;
 import Tasks.Task;
+import Tasks.TaskGenerator;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class TeamLeader extends MasterCoder implements SoftAdvisor, SoftTaskAssignable {
     public TeamLeader(String name) {
@@ -31,9 +36,15 @@ public class TeamLeader extends MasterCoder implements SoftAdvisor, SoftTaskAssi
 
     @Override
     public void generateTaks() {
-        for(int i = 0; i < 5; i++){
-            getTasks().add(new Presentation());
-            getTasks().add(new Documentation());
+        Map<String, ArrayList<Task>> map = TaskGenerator.Generator.generateAllTasksTypes();
+        List<Task> presi = map.get("Presentation");
+        List<Task> docs = map.get("Documentation");
+        for (int i = 0; i < 3; i++) {
+            int presiTask = Coder.getRNG().nextInt(presi.size());
+            int docsTask = Coder.getRNG().nextInt(docs.size());
+
+            getTasks().add(presi.get(presiTask));
+            getTasks().add(docs.get(docsTask));
         }
 
     }

@@ -4,15 +4,28 @@ import PlayerProperties.Skill;
 import Tasks.Presentation;
 import Tasks.OOP;
 import Tasks.Task;
+import Tasks.TaskGenerator;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class ProjectManager extends MasterCoder implements HardTaskAssignable,HardAdvisor {
+    
     public ProjectManager(String name) {
+
         super(name);
     }
 
     @Override
     public Task assignTask() {
-        return null;
+
+        int pool = getTasks().size();
+        if(pool == 0){
+            return null;
+        }
+        int task = Coder.getRNG().nextInt(pool);
+        return getTasks().remove(task);
     }
 
     @Override
@@ -26,10 +39,15 @@ public class ProjectManager extends MasterCoder implements HardTaskAssignable,Ha
 
     @Override
     public void generateTaks() {
-        for(int i = 0; i < 5; i++){
-            getTasks().add(new Presentation());
-            getTasks().add(new OOP());
-        }
+        Map<String, ArrayList<Task>> map = TaskGenerator.Generator.generateAllTasksTypes();
+        List<Task> oop = map.get("OOP");
+        List<Task> docs = map.get("Documentation");
+        for (int i = 0; i < 3; i++) {
+            int oopTask = Coder.getRNG().nextInt(oop.size());
+            int docsTask = Coder.getRNG().nextInt(docs.size());
 
+            getTasks().add(oop.get(oopTask));
+            getTasks().add(docs.get(docsTask));
+        }
     }
 }

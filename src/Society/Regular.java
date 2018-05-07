@@ -2,6 +2,11 @@ package Society;
 
 import Tasks.Algo;
 import Tasks.Task;
+import Tasks.TaskGenerator;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public  class Regular extends Entered  implements HardTaskAssignable{
 
@@ -22,8 +27,11 @@ public  class Regular extends Entered  implements HardTaskAssignable{
 
     @Override
     public void generateTaks() {
-        for(int i = 0; i < 5; i++){
-            this.getTasks().add(new Algo());
+        Map<String, ArrayList<Task>> map = TaskGenerator.Generator.generateAllTasksTypes();
+        List<Task> algo = map.get("Algo");
+        for (int i = 0; i < 3; i++) {
+            int algoTask = Coder.getRNG().nextInt(algo.size());
+            getTasks().add(algo.get(algoTask));
         }
     }
 

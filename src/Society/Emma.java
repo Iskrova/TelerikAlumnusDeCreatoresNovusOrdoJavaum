@@ -3,6 +3,10 @@ package Society;
 import PlayerProperties.Skill;
 import Tasks.*;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 public class Emma extends Fellow implements SoftTaskAssignable, SoftAdvisor {
     private static Emma ourInstance = new Emma();
 
@@ -34,9 +38,15 @@ public class Emma extends Fellow implements SoftTaskAssignable, SoftAdvisor {
 
     @Override
     public void generateTaks() {
-        for (int i = 0; i < 5; i++){
-            getTasks().add(new Presentation());
-            getTasks().add(new Documentation());
+        Map<String, ArrayList<Task>> map = TaskGenerator.Generator.generateAllTasksTypes();
+        List<Task> presi = map.get("Presentation");
+        List<Task> docs = map.get("Documentation");
+        for (int i = 0; i < 3; i++){
+            int presiTask = Coder.getRNG().nextInt(presi.size());
+            int docsTask = Coder.getRNG().nextInt(docs.size());
+
+            getTasks().add(presi.get(presiTask));
+            getTasks().add(docs.get(docsTask));
         }
     }
 }

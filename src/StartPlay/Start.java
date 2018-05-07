@@ -1,5 +1,7 @@
 package StartPlay;
 
+import PlayerProperties.Internet;
+import PlayerProperties.InternetType;
 import PlayerProperties.Skill;
 import Society.*;
 import Tasks.Algo;
@@ -27,6 +29,7 @@ public class Start {
 
 
 
+        coki.equipTool(new Internet(InternetType.DSL));
         Minkov.generateTaks();
         coki.receiveTask(Minkov.assignTask());
         coki.getCurrentTask();

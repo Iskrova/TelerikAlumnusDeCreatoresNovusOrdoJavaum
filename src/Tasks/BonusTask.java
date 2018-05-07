@@ -1,7 +1,7 @@
 package Tasks;
 
 import PlayerProperties.Skill;
-import Utility.Utility;
+import Utility.SkillGenerator;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -19,7 +19,7 @@ public class BonusTask extends Task {
     public static ArrayList<Task> generateTasks() {
         ArrayList<Task> tasks= new ArrayList<>();
         for (String name : names) {
-            Task t = new BonusTask(name,description,Utility.SkillGenerator.generateSkill(10,125,
+            Task t = new BonusTask(name,description,SkillGenerator.Generator.generateSkill(10,125,
                     15, 55,55,130));
             tasks.add(t);
         }

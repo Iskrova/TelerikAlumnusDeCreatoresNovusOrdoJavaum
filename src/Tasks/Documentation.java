@@ -2,7 +2,7 @@ package Tasks;
 
 import PlayerProperties.Skill;
 import Utility.Reader;
-import Utility.Utility;
+import Utility.SkillGenerator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,7 +50,7 @@ public class Documentation extends Task {
         map = Reader.ReadTasks.getAllTasks("DocumentationTasksDescription");
         for (Map.Entry<String, String> entry : map.entrySet()) {
             Task t = new Documentation(entry.getKey(),
-                    Utility.SkillGenerator.generateSkill(Documentation.getMinCoding(),
+                    SkillGenerator.Generator.generateSkill(Documentation.getMinCoding(),
                     Documentation.getMaxCoding(),Documentation.getMinSoft(),Documentation.getMaxSoft(),
                     Documentation.getMinAlgo(),Documentation.getMaxAlgo()),
                     entry.getValue(),false) ;

@@ -2,7 +2,7 @@ package Tasks;
 
 import PlayerProperties.Skill;
 import Utility.Reader;
-import Utility.Utility;
+import Utility.SkillGenerator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,7 +52,7 @@ public class Algo extends Task {
         map = Reader.ReadTasks.getAllTasks("AlgoTasksDescriptions");
         for (Map.Entry<String, String> entry : map.entrySet()) {
             Task t = new Algo(entry.getKey(),
-                    Utility.SkillGenerator.generateSkill(Algo.getMinCoding(),Algo.getMaxCoding(),
+                    SkillGenerator.Generator.generateSkill(Algo.getMinCoding(),Algo.getMaxCoding(),
                     Algo.getMinSoft(),Algo.getMaxSoft(),Algo.getMinAlgo(),Algo.getMaxAlgo()),
                     entry.getValue(),false) ;
             tasks.add(t);

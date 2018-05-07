@@ -30,7 +30,7 @@ Our git repository URL -> https://github.com/Iskrova/TelerikAlumnusDeCreatoresNo
     different categories, which need different skill levels to be completed. If **Coki** manages to complete the task within the given time
     limit, he gains experience, so that he can rank his level up. If he fails he might lose experience too.
    
-    Once he has gained some experience he has the chance to meet the one and only **Joro the Rabbit**, who makes **Coki**
-    choose whether he would rank up or .. well, something else, but let's not spoil the surprise :>
+    Once he has enough experience he has the chance to meet **Joro the Rabbit** himself, who makes **Coki**
+    choose whether he would rank up or .. well, something else, but let's not spoil the surprise :)
     
     Sounds fun, yeah? Well, let's play!

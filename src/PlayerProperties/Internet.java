@@ -6,9 +6,9 @@ public class Internet extends Instrument {
     public Internet(InternetType type) {
         this.type = type;
         switch (type) {
-            case DSL:           getBonusPoints().gainSkill(new Skill(0, 15, 0)); break;
-            case LTE:           getBonusPoints().gainSkill(new Skill(0, 60, 0)); break;
-            case OPTICAL_FIBER: getBonusPoints().gainSkill(new Skill(0, 75, 0)); break;
+            case DSL:           getBonusPoints().gainSkill(new Skill(223, 150, 100)); break;
+            case LTE:           getBonusPoints().gainSkill(new Skill(220, 60, 100)); break;
+            case OPTICAL_FIBER: getBonusPoints().gainSkill(new Skill(200, 75, 100)); break;
         }
     }
 }

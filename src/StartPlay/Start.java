@@ -1,8 +1,6 @@
 package StartPlay;
 
-import PlayerProperties.Internet;
-import PlayerProperties.InternetType;
-import PlayerProperties.Skill;
+import PlayerProperties.*;
 import Society.*;
 import Tasks.Algo;
 import Tasks.Task;
@@ -30,6 +28,9 @@ public class Start {
 
 
         coki.equipTool(new Internet(InternetType.DSL));
+        coki.equipTool(new Hardware(HardwareType.LAPTOP));
+        coki.equipTool(new IDE(IDEType.ECLIPSE));
+
         Minkov.generateTaks();
         coki.receiveTask(Minkov.assignTask());
         coki.getCurrentTask();
@@ -55,9 +56,11 @@ public class Start {
 
 
         coki.getCompletedTasksHistory();
+        coki.getCompletedTasksHistory().forEach(x-> System.out.printf("Solved tasks are: %s ", x));
         //coki.getHardAdvice(Minkov);
         coki.relieveStres(50);
         coki.tireOut(50);
+        coki.rankUp();
         //coki.rest(12,5);
     }
 }

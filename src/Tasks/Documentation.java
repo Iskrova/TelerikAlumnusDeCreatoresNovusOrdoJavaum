@@ -61,6 +61,6 @@ public class Documentation extends Task {
 
     @Override
     public String toString() {
-        return String.format("Task name is: \"%s\" with deadline:%f ",super.getName(), super.getDeadline()) ;
+        return String.format("Task name: \"%s\" with deadline:%.2f ",super.getName(), super.getDeadline()) ;
     }
 }

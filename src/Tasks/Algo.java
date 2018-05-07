@@ -17,7 +17,7 @@ public class Algo extends Task {
     private final static int minAlgo =300;
     private final static int maxAlgo =600;
     public Algo(String name, Skill requirements, String description, boolean completed) {
-        super(minCoding,maxCoding, minSoft, maxSoft, minAlgo, maxAlgo,
+        super(getMinCoding(),getMaxCoding(),getMinSoft(), getMaxSoft(), getMinAlgo(), getMaxAlgo(),
                 requirements, name,1,  description, completed);
     }
 

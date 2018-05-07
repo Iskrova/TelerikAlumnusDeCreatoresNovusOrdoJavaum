@@ -1,6 +1,7 @@
 package Tasks;
 
 import PlayerProperties.Skill;
+import Utility.MySetterRequirementException;
 import Utility.SkillGenerator;
 
 public abstract class Task {
@@ -56,11 +57,15 @@ public abstract class Task {
     }
 
     public void setRequirements(Skill requirements) {
-        if ((requirements.getCoding() >= MIN_CODING && requirements.getCoding() <= MAX_CODING)
+        if (!((requirements.getCoding() >= MIN_CODING && requirements.getCoding() <= MAX_CODING)
                 && (requirements.getSoftSkills() >= MIN_SOFT && requirements.getSoftSkills() <= MAX_SOFT)
-                && (requirements.getAlgorithmicThinking() >= MIN_ALGO && requirements.getAlgorithmicThinking() <= MAX_ALGO)) {
-            this.requirements = requirements;
-        }
+                && (requirements.getAlgorithmicThinking() >= MIN_ALGO && requirements.getAlgorithmicThinking() <= MAX_ALGO))) {
+            try {
+                throw new MySetterRequirementException(" Skill requirements not valid!");
+            } catch (MySetterRequirementException e) {
+                e.printStackTrace();
+            }
+        } this.requirements = requirements;
 
     }
 

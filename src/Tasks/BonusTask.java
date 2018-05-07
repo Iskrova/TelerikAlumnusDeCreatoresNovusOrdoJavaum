@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class BonusTask extends Task {
     public BonusTask(String name, String description,Skill requrements) {
-        super(1,1,1,1,1,1,
+        super(10,125,15,55,55,130,
                 requrements, name,0,  description,true);
     }
     private static String[] names=new String[]{"Lucky Number", "Magic", "Miracle"};

@@ -12,27 +12,30 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Start {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoCurrentTaskException {
         Player coki = new Player("Coki");
         Doncho Minkov = new Doncho();
         Emma ema = new Emma();
         CTO Boyko = new CTO("Boyko");
         Ninja Cuki = new Ninja("Cuki");
-        Task t = new Algo("fgdf", SkillGenerator.Generator.generateSkill(10,100,
-                10,20,100,200),"khkhj",false);
-        Map<String,ArrayList<Task>> map = TaskGenerator.Generator.generateAllTasksTypes();
+        Task t = new Algo("fgdf", SkillGenerator.Generator.generateSkill(Algo.getMinCoding(),Algo.getMaxCoding(),
+                Algo.getMinSoft(),Algo.getMaxSoft(),Algo.getMinAlgo(),Algo.getMaxAlgo()),"khkhj",false);
+        //Map<String,ArrayList<Task>> map = TaskGenerator.Generator.generateAllTasksTypes();
+        //for (Map.Entry<String, ArrayList<Task>> entry : map.entrySet()) {
+         //   coki.receiveTask((Task) entry);
+        //}
 
 
 
 
         coki.receiveTask(t);
         coki.getCurrentTask();
-        //coki.getHardAdvice(Minkov);
+        coki.getHardAdvice(Minkov);
 
         coki.receiveTask(ema.assignTask());
-        //coki.getSoftAdvice(ema);
+        coki.getSoftAdvice(ema);
 
-        //coki.rest(1,4);
+        coki.rest(1,4);
         coki.relieveStres(10);
 
         coki.receiveTask(Boyko.assignTask());

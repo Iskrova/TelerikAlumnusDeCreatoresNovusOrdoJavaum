@@ -9,7 +9,7 @@ import java.util.Map;
 public class BonusTask extends Task {
     public BonusTask(String name, String description,Skill requrements) {
         super(0,0,0,0,0,0,
-                requrements, name,  description,true);
+                requrements, name,0,  description,true);
     }
     private static String[] names=new String[]{"Lucky Number", "Magic", "Miracle"};
     private static String description= " Congratulations!\n" +

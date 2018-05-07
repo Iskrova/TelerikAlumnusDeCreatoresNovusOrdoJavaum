@@ -17,7 +17,7 @@ public class OOP extends Task {
     private final static int maxAlgo =400;
     public OOP(String name, Skill requirements, String description, boolean completed) {
         super(minCoding,maxCoding, minSoft, maxSoft, minAlgo, maxAlgo,
-                requirements, name,  description, completed);
+                requirements, name, 5,  description, completed);
     }
 
     public static int getMinCoding() {

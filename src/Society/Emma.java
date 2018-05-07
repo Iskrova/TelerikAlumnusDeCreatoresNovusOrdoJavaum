@@ -53,4 +53,9 @@ public class Emma extends Fellow implements SoftTaskAssignable, SoftAdvisor {
             getTasks().add(docs.get(docsTask));
         }
     }
+
+    @Override
+    public String toString() {
+        return "Emma";
+    }
 }

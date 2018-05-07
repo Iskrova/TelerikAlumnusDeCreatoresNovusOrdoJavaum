@@ -40,17 +40,20 @@ public class Start {
         coki.receiveTask(MinkovTask);
         coki.getCurrentTask();
 
-        //if(!(coki.getCurrentTask().isCompleted())) {
-           // coki.getHardAdvice(Minkov);
-        //}
+        if(!(coki.getCurrentTask() != null && coki.getCurrentTask().isCompleted())) {
+            coki.getHardAdvice(Minkov);
+            System.out.printf("Hard advice given by %s!\n", Minkov.toString());
+        }
 
         coki.rest(1,4);
         ema.generateTaks();
         coki.receiveTask(ema.assignTask());
-        //if(!(coki.getCurrentTask().isCompleted())) {
-          //  coki.getSoftAdvice(ema);
-        //}
         System.out.println(ema.assignTask());
+        if(!(coki.getCurrentTask() != null && coki.getCurrentTask().isCompleted())) {
+            coki.getSoftAdvice(ema);
+            System.out.printf("Soft advice given by %s!\n", ema.toString());
+        }
+
 
 
 
@@ -58,7 +61,6 @@ public class Start {
 
         Boyko.generateTaks();
         coki.receiveTask(Boyko.assignTask());
-        //coki.getCurrentTask();
         System.out.println(Boyko.assignTask());
        // coki.getHardAdvice(Minkov);
 
@@ -68,7 +70,7 @@ public class Start {
         coki.getCurrentTask();
         System.out.println(cuki);
 
-        coki.getCompletedTasksHistory().forEach(x-> System.out.printf("Solved: %s ", x));
+        coki.getCompletedTasksHistory().forEach(x-> System.out.printf("Solved: %s\n", x));
         //coki.getHardAdvice(Minkov);
         coki.relieveStres(50);
         coki.tireOut(50);

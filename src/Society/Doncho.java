@@ -57,4 +57,9 @@ public class Doncho extends Fellow implements HardAdvisor, HardTaskAssignable {
             getTasks().add(algo.get(algoTask));
         }
     }
+
+    @Override
+    public String toString() {
+        return "Doncho";
+    }
 }

@@ -4,41 +4,41 @@ import Society.Player;
 
 public class LeisureActivity {
 
-    public  void pickActivity(Player player, int activityChoice){
+    public  void pickActivity(Player player, int activityChoice, int time){
         int energy = player.getEnergy();
         switch (activityChoice){
             case 1:
-                goOut(player, energy); break;
+                goOut(player, energy, time); break;
             case 2:
-                learn(player, energy); break;
+                learn(player, energy, time); break;
             case 3:
-                drinkBeer(player, energy); break;
+                drinkBeer(player, energy, time); break;
             case 4:
-                goToTheBeach(player, energy); break;
+                goToTheBeach(player, energy, time); break;
             case 5:
-                goSightseeing(player, energy); break;
+                goSightseeing(player, energy, time); break;
             default:
                 break;
         }
     }
-    private void goOut(Player player, int energy){
+    private void goOut(Player player, int energy, int time){
         player.setEnergy(energy + 1);
-        player.getCurrentTask().reduceDeadline(1);
+        player.getCurrentTask().reduceDeadline(time);
     }
-    private void learn(Player player, int energy){
+    private void learn(Player player, int energy, int time){
         player.setEnergy(energy + 2);
-        player.getCurrentTask().reduceDeadline(1);
+        player.getCurrentTask().reduceDeadline(time);
     }
-    private void drinkBeer(Player player, int energy){
+    private void drinkBeer(Player player, int energy, int time){
         player.setEnergy(energy + 3);
-        player.getCurrentTask().reduceDeadline(1);
+        player.getCurrentTask().reduceDeadline(time);
     }
-    private void goToTheBeach(Player player, int energy){
+    private void goToTheBeach(Player player, int energy, int time){
         player.setEnergy(energy + 4);
-        player.getCurrentTask().reduceDeadline(1);
+        player.getCurrentTask().reduceDeadline(time);
     }
-    private void goSightseeing(Player player, int energy){
+    private void goSightseeing(Player player, int energy, int time){
         player.setEnergy(energy + 5);
-        player.getCurrentTask().reduceDeadline(1);
+        player.getCurrentTask().reduceDeadline(time);
     }
 }

@@ -33,16 +33,15 @@ public class Player {
         completedTasksHistory = new ArrayList<>();
     }
 
-    public void rest(Player player, int hours, int activityChoice){
-        leisureActivity.pickActivity(player, activityChoice);
-        energy = Math.min(energy, 100);
+    public void rest(int hours, int activityChoice){
+        leisureActivity.pickActivity(this, activityChoice, hours);
+        if(energy > 100) energy = 100;
         stressLevel -= hours * 13;
         stressLevel = Math.max(0, stressLevel);
         if(currentTask == null) {
             return;
         }
-        currentTask.reduceDeadline(hours);
-        if(currentTask.getDeadline() <= 0){
+        if(currentTask.getDeadline() < 0){
             System.out.println("Task failed");
             experience = (int) Math.round(experience * 0.75);
         }

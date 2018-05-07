@@ -6,6 +6,7 @@ import Tasks.Task;
 import Tasks.TaskGenerator;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class CTO extends MasterCoder implements SoftTaskAssignable {
@@ -17,8 +18,8 @@ public class CTO extends MasterCoder implements SoftTaskAssignable {
 
     @Override
     public void generateTaks() {
-        Map<String, ArrayList<Task>> map = TaskGenerator.Generator.generateAllTasksTypes();
-        ArrayList<Task> tasks = map.get("Presentation");
+        Map<String, List<Task>> map = Coder.getAllTasks();
+        List<Task> tasks = map.get("Presentation");
 
         getTasks().add((tasks.get(Coder.getRNG().nextInt(tasks.size()))));
         getTasks().add((tasks.get(Coder.getRNG().nextInt(tasks.size()))));

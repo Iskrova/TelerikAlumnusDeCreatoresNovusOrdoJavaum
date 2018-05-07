@@ -27,7 +27,7 @@ public class Ninja extends Fellow implements HardTaskAssignable {
 
     @Override
     public void generateTaks() {
-        Map<String, ArrayList<Task>> map = TaskGenerator.Generator.generateAllTasksTypes();
+        Map<String, List<Task>> map = Coder.getAllTasks();
         List<Task> algo = map.get("Algo");
         for(int i = 0; i < 5; i++){
 

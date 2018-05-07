@@ -26,11 +26,14 @@ public class Start {
         //}
 
 
-
         coki.equipTool(new Internet(InternetType.DSL));
         coki.equipTool(new Hardware(HardwareType.LAPTOP));
         coki.equipTool(new IDE(IDEType.ECLIPSE));
 
+//        Task task = minkov.assignTask();
+//        System.out.println(task);
+//        coki.receiveTask(task);
+//        System.out.println(coki.getCurrentTask());
         Minkov.generateTaks();
         Task MinkovTask = Minkov.assignTask();
         System.out.println(MinkovTask);

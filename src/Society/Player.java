@@ -68,20 +68,19 @@ public class Player {
 
     }
     public void receiveTask(Task task) throws NoCurrentTaskException {
-        if(currentTask == null){
-            currentTask = task;
-            for(Instrument tool : tools.getTools()){
-                if(tool == null){
-                    continue;
-                }
-                if (!(currentTask != null && currentTask.isCompleted())) {
-                    updateTask(tool.getBonusPoints(), 100);
-                }
-                //else receiveTask((Task) TaskGenerator.Generator.generateAllTasksTypes());
-            }
-        }else{
+        if(currentTask != null){
             System.out.println("Task in progress.");
+            return;
 
+        }
+        currentTask = task;
+        for(Instrument tool : tools.getTools()){
+            if(tool == null){
+                continue;
+            }
+            if (!(currentTask != null && currentTask.isCompleted())) {
+                updateTask(tool.getBonusPoints(), 100);
+            }
         }
     }
 

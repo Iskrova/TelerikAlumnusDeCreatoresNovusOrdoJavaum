@@ -104,10 +104,12 @@ public abstract class Task {
     }
 
     public void complete() {
-        if (requirements.getCoding() == 0
-                && requirements.getSoftSkills() == 0
-                && requirements.getAlgorithmicThinking() == 0) {
+        if (requirements.getCoding() <= 0
+                && requirements.getSoftSkills() <= 0
+                && requirements.getAlgorithmicThinking() <= 0) {
             completed = true;
+        }else{
+            completed = false;
         }
     }
 

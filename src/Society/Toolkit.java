@@ -14,7 +14,11 @@ public class Toolkit {
     private Internet internet;
 
     public Toolkit(){
+
         instruments = new ArrayList<>();
+        hardware = null;
+        ide = null;
+        internet = null;
     }
 
     public void equipTool(Instrument tool){

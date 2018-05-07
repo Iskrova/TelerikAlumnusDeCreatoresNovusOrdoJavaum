@@ -36,7 +36,8 @@ public class Doncho extends Fellow implements HardAdvisor, HardTaskAssignable {
     public Task assignTask() {
         int pool = getTasks().size();
         if(pool == 0){
-            return null;
+            generateTaks();
+            pool = getTasks().size();
         }
         int task = Coder.getRNG().nextInt(pool);
         return getTasks().remove(task);

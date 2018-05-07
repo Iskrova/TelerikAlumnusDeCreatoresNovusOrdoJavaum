@@ -5,10 +5,12 @@ import PlayerProperties.Instrument;
 import PlayerProperties.Rank;
 import PlayerProperties.Skill;
 import Tasks.Task;
+import Tasks.TaskGenerator;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public class Player {
     private String name;
@@ -72,7 +74,10 @@ public class Player {
                 if(tool == null){
                     continue;
                 }
-                updateTask(tool.getBonusPoints(), 0);
+                if (!(currentTask != null && currentTask.isCompleted())) {
+                    updateTask(tool.getBonusPoints(), 100);
+                }
+                //else receiveTask((Task) TaskGenerator.Generator.generateAllTasksTypes());
             }
         }else{
             System.out.println("Task in progress.");
@@ -88,7 +93,11 @@ public class Player {
 
     public void updateTask(Skill skill, int time) throws NoCurrentTaskException {
         if(currentTask == null){
-            throw new NoCurrentTaskException("No active task at the moment");
+            Map<String,ArrayList<Task>> map =TaskGenerator.Generator.generateAllTasksTypes();
+            for (Map.Entry<String, ArrayList<Task>> entry : map.entrySet()) {
+                currentTask=  entry.getValue().get(1);
+            }
+            //throw new NoCurrentTaskException("No active task at the moment");
         }
         currentTask.reduceDeadline(time);
         if(currentTask.getDeadline() < 0){

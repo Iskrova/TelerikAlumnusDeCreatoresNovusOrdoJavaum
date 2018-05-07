@@ -32,31 +32,40 @@ public class Start {
         coki.equipTool(new IDE(IDEType.ECLIPSE));
 
         Minkov.generateTaks();
-        coki.receiveTask(Minkov.assignTask());
+        Task MinkovTask = Minkov.assignTask();
+        System.out.println(MinkovTask);
+        coki.receiveTask(MinkovTask);
         coki.getCurrentTask();
-        System.out.println(Minkov.assignTask());
-        coki.getHardAdvice(Minkov);
+
+        //if(!(coki.getCurrentTask().isCompleted())) {
+           // coki.getHardAdvice(Minkov);
+        //}
 
         coki.rest(1,4);
-
+        ema.generateTaks();
         coki.receiveTask(ema.assignTask());
-        coki.getSoftAdvice(ema);
+        //if(!(coki.getCurrentTask().isCompleted())) {
+          //  coki.getSoftAdvice(ema);
+        //}
+        System.out.println(ema.assignTask());
+
 
 
         coki.relieveStres(10);
+
         Boyko.generateTaks();
         coki.receiveTask(Boyko.assignTask());
+        //coki.getCurrentTask();
         System.out.println(Boyko.assignTask());
-        coki.getHardAdvice(Minkov);
+       // coki.getHardAdvice(Minkov);
 
         Cuki.generateTaks();
         Task cuki = Cuki.assignTask();
         coki.receiveTask(cuki);
+        coki.getCurrentTask();
         System.out.println(cuki);
 
-
-        coki.getCompletedTasksHistory();
-        coki.getCompletedTasksHistory().forEach(x-> System.out.printf("Solved tasks are: %s ", x));
+        coki.getCompletedTasksHistory().forEach(x-> System.out.printf("Solved: %s ", x));
         //coki.getHardAdvice(Minkov);
         coki.relieveStres(50);
         coki.tireOut(50);

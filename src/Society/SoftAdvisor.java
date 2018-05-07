@@ -1,5 +1,5 @@
 package Society;
 
 public interface SoftAdvisor {
-    void giveSoftAdvice(Player player);
+    void giveSoftAdvice(Player player) throws NoCurrentTaskException;
 }

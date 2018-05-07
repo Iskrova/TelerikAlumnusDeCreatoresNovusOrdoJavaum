@@ -2,16 +2,17 @@ package Society;
 
 import PlayerProperties.Rank;
 import Tasks.Task;
+import Tasks.TaskGenerator;
 import Utility.Utility;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public  abstract class Coder {
 
 
     private static final Random RNG = new Random();
+
+    private static Map<String, ArrayList<Task>> allTasks = TaskGenerator.Generator.generateAllTasksTypes();
 
     private String name;
     private List<Task> tasks;
@@ -30,6 +31,10 @@ public  abstract class Coder {
         this.name=name;
     }
 
+    public static Map<String, List<Task>> getAllTasks(){
+        return Collections.unmodifiableMap(allTasks);
+    }
+
     public List<Task> getTasks() {
         return tasks;
     }
@@ -38,7 +43,7 @@ public  abstract class Coder {
         return rank;
     }
 
-    public static Random getRNG() {
+    static Random getRNG() {
         return RNG;
     }
 

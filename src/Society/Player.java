@@ -52,11 +52,11 @@ public class Player {
             stressLevel -= stressRelieved;
         }
     }
-    public void getSoftAdvice(SoftAdvisor softAdvisor){
+    public void getSoftAdvice(SoftAdvisor softAdvisor) throws NoCurrentTaskException {
         softAdvisor.giveSoftAdvice(this);
 
     }
-    public void getHardAdvice(HardAdvisor hardAdvisor){
+    public void getHardAdvice(HardAdvisor hardAdvisor) throws NoCurrentTaskException {
         hardAdvisor.giveHardAdvice(this);
 
     }
@@ -73,8 +73,10 @@ public class Player {
         return Collections.unmodifiableList(completedTasksHistory);
     }
 
-    public void updateTask(Skill skill, int time){
-        //TODO FIX TASK UPDATE
+    void updateTask(Skill skill, int time) throws NoCurrentTaskException {
+        if(currentTask == null){
+            throw new NoCurrentTaskException("No active task at the moment");
+        }
         currentTask.reduceDeadline(time);
         if(currentTask.getDeadline() < 0){
             System.out.println("Task failed");
@@ -98,12 +100,12 @@ public class Player {
         return currentTask;
     }
 
-    public Skill getSkills() {
+    Skill getSkills() {
 
         return skills;
     }
 
-    public void stressOut(int stressLevel){
+    void stressOut(int stressLevel){
 
         this.stressLevel += stressLevel;
     }

@@ -29,7 +29,7 @@ public class ProjectManager extends MasterCoder implements HardTaskAssignable,Ha
     }
 
     @Override
-    public void giveHardAdvice(Player player) {
+    public void giveHardAdvice(Player player) throws NoCurrentTaskException {
         int coding = Coder.getRNG().nextInt(11) + 7;
         player.stressOut(3);
         Skill s = new Skill(coding, 0, 0);
@@ -39,7 +39,7 @@ public class ProjectManager extends MasterCoder implements HardTaskAssignable,Ha
 
     @Override
     public void generateTaks() {
-        Map<String, ArrayList<Task>> map = TaskGenerator.Generator.generateAllTasksTypes();
+        Map<String, List<Task>> map = Coder.getAllTasks();
         List<Task> oop = map.get("OOP");
         List<Task> docs = map.get("Documentation");
         for (int i = 0; i < 3; i++) {

@@ -25,7 +25,7 @@ public class Start {
 
 
 
-        coki.receiveTask(Minkov.assignTask());
+        coki.receiveTask(t);
         coki.getCurrentTask();
         //coki.getHardAdvice(Minkov);
 

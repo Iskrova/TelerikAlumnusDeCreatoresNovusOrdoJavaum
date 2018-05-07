@@ -17,7 +17,7 @@ public class TeamLeader extends MasterCoder implements SoftAdvisor, SoftTaskAssi
     }
 
     @Override
-    public void giveSoftAdvice(Player player) {
+    public void giveSoftAdvice(Player player) throws NoCurrentTaskException {
         int softSkill = Coder.getRNG().nextInt(11) + 7;
         Skill s = new Skill(0, softSkill, 0);
         player.getSkills().gainSkill(s);
@@ -36,7 +36,7 @@ public class TeamLeader extends MasterCoder implements SoftAdvisor, SoftTaskAssi
 
     @Override
     public void generateTaks() {
-        Map<String, ArrayList<Task>> map = TaskGenerator.Generator.generateAllTasksTypes();
+        Map<String, List<Task>> map = Coder.getAllTasks();
         List<Task> presi = map.get("Presentation");
         List<Task> docs = map.get("Documentation");
         for (int i = 0; i < 3; i++) {

@@ -1,5 +1,6 @@
 package StartPlay;
 
+import Places.CampusX;
 import PlayerProperties.*;
 import Society.*;
 import Tasks.Algo;
@@ -26,9 +27,9 @@ public class Start {
         //}
 
 
-        coki.equipTool(new Internet(InternetType.DSL));
-        coki.equipTool(new Hardware(HardwareType.LAPTOP));
-        coki.equipTool(new IDE(IDEType.ECLIPSE));
+        coki.equipTool(new Internet(InternetType.OPTICAL_FIBER));
+        coki.equipTool(new Hardware(HardwareType.PC));
+        coki.equipTool(new IDE(IDEType.INTELLIJ));
 
 //        Task task = minkov.assignTask();
 //        System.out.println(task);
@@ -62,7 +63,7 @@ public class Start {
         Boyko.generateTaks();
         coki.receiveTask(Boyko.assignTask());
         System.out.println(Boyko.assignTask());
-       // coki.getHardAdvice(Minkov);
+        coki.getHardAdvice(Minkov);
 
         Cuki.generateTaks();
         Task cuki = Cuki.assignTask();
@@ -70,11 +71,35 @@ public class Start {
         coki.getCurrentTask();
         System.out.println(cuki);
 
-        coki.getCompletedTasksHistory().forEach(x-> System.out.printf("Solved: %s\n", x));
-        //coki.getHardAdvice(Minkov);
+//        coki.getCompletedTasksHistory().forEach(x-> System.out.printf("Solved: %s\n", x));
         coki.relieveStres(50);
         coki.tireOut(50);
+        coki.getHardAdvice(Minkov);
+        coki.getHardAdvice(Minkov);
+        coki.getHardAdvice(Minkov);
+        CampusX campus = new CampusX();
+        campus.train(coki);
+        campus.train(coki);
+        campus.train(coki);
+        campus.train(coki);
+        campus.train(coki);
+        campus.train(coki);
+        campus.train(coki);
+        campus.train(coki);
+        campus.train(coki);
+        System.out.println("Energy -> " + coki.getEnergy());
+        System.out.println("Stress -> " + coki.getStressLevel());
+        coki.getCompletedTasksHistory().forEach(x-> System.out.printf("Solved: %s\n", x));
+        System.out.println("Rank -> " + coki.getRank());
+        System.out.println("Experience -> " + coki.getExperience());
         coki.rankUp();
+        System.out.println(coki.getSkills().getAlgorithmicThinking());
+        System.out.println(coki.getSkills().getCoding());
+        System.out.println(coki.getSkills().getSoftSkills());
+        System.out.println("Rank -> " + coki.getRank());
+        cuki.getDeadline();
+        coki.getCompletedTasksHistory().forEach(x-> System.out.printf("Solved: %s\n", x));
         //coki.rest(12,5);
+
     }
 }

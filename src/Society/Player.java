@@ -52,6 +52,10 @@ public class Player {
         }
     }
 
+    public int getStressLevel() {
+        return stressLevel;
+    }
+
     public void relieveStres( int stressRelieved){
         if(stressLevel - stressRelieved >= 0){
             stressLevel -= stressRelieved;
@@ -88,6 +92,14 @@ public class Player {
         return Collections.unmodifiableList(completedTasksHistory);
     }
 
+    public Rank getRank() {
+        return rank;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
 
 
     public void updateTask(Skill skill, int time) throws NoCurrentTaskException {
@@ -119,8 +131,8 @@ public class Player {
     }
 
     public Skill getSkills() {
-
         return skills;
+//        System.out.println(skills.getAlgorithmicThinking() + " " + skills.getCoding() + " " + skills.getSoftSkills());;
     }
 
     public void stressOut(int stressLevel){
